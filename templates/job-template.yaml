@@ -16,7 +16,9 @@
     block-downstream: false
     block-upstream: false
     retry-count: 3
+{% if jenkins_job_poll_repo %}
     triggers:
       - pollscm:
           cron: "* * * * *"
           ignore-post-commit-hooks: True
+{% endif %}

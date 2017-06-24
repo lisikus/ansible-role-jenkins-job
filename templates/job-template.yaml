@@ -1,0 +1,22 @@
+- job:
+    name: {{ jenkins_job_name }}
+    project-type: pipeline
+    pipeline-scm:
+      scm:
+        - git:
+            url: {{ jenkins_job_git_url }}
+            clean: true
+      script-path: {{ jenkins_job_script_path }}
+    defaults: global
+    description: 'Do not edit this job through the web!'
+    disabled: false
+    display-name: '{{ jenkins_job_description }}'
+    concurrent: false
+    quiet-period: 5
+    block-downstream: false
+    block-upstream: false
+    retry-count: 3
+    triggers:
+      - pollscm:
+          cron: "* * * * *"
+          ignore-post-commit-hooks: True

@@ -1,0 +1,7 @@
+- name: put "/var/lib/jenkins/{{ jenkins_job_name }}-template.yaml"
+  template: src=job-template.yaml dest=/var/lib/jenkins/{{ jenkins_job_name }}-template.yaml owner=jenkins group=jenkins backup=yes
+
+- name: create a job
+  become: yes
+  become_user: jenkins
+  shell: /var/lib/jenkins/.local/bin/jenkins-jobs update {{ jenkins_job_name }}-template.yaml

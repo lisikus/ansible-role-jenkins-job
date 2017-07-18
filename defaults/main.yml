@@ -1,2 +1,4 @@
 jenkins_job_script_path: Jenkinsfile
 jenkins_job_poll_repo: True
+jenkins_job_git_branches:
+  - "**"

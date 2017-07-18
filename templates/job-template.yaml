@@ -6,6 +6,10 @@
         - git:
             url: {{ jenkins_job_git_url }}
             clean: true
+            branches:
+{% for branch in jenkins_job_git_branches %}
+              - {{ branch }}
+{% endfor %}
       script-path: {{ jenkins_job_script_path }}
     defaults: global
     description: 'Do not edit this job through the web!'

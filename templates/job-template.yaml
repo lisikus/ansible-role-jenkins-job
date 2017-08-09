@@ -8,7 +8,7 @@
             clean: true
             branches:
 {% for branch in jenkins_job_git_branches %}
-              - {{ branch }}
+              - "{{ branch }}"
 {% endfor %}
       script-path: {{ jenkins_job_script_path }}
     defaults: global

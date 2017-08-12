@@ -4,7 +4,7 @@
 - name: create a job
   become: yes
   become_user: jenkins
-  shell: "{{ jenkins_home }}/.local/bin/jenkins-jobs update {{ jenkins_home }}/{{ jenkins_job_name }}-template.yaml"
+  shell: "/usr/local/bin/jenkins-jobs update {{ jenkins_home }}/{{ jenkins_job_name }}-template.yaml"
   when: ansible_os_family == "Debian"
 
 - name: create a job

@@ -26,3 +26,7 @@
           cron: "{{jenkins_job_poll_period}}"
           ignore-post-commit-hooks: True
 {% endif %}
+{% if jenkins_job_parameters is defined %}
+    parameters:
+{{ jenkins_job_parameters | to_nice_yaml | indent(6,true) }}
+{% endif %}

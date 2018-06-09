@@ -3,3 +3,4 @@ jenkins_job_poll_repo: True
 jenkins_job_git_branches:
   - "**"
 jenkins_job_poll_period: "* * * * *"
+jenkins_home: /var/lib/jenkins
